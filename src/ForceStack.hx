@@ -17,32 +17,17 @@ class ForceStack
     /**
      * Add entry to call stack
      */
-    static public inline function enterFunction (type:String, field:String, file:String, line:Int) : Void
+    static public inline function enterFunction (type:String, field:String, file:String) : Void
     {
-        //function declaration line {
-            if (root.previous.next == null) {
-                root.previous.next = new ForceStackEntry();
-                root.previous.next.previous = root.previous;
-            }
-            root.previous = root.previous.next;
+        if (root.previous.next == null) {
+            root.previous.next = new ForceStackEntry();
+            root.previous.next.previous = root.previous;
+        }
+        root.previous = root.previous.next;
 
-            root.previous.type  = type;
-            root.previous.field = field;
-            root.previous.file  = file;
-            root.previous.line  = line;
-        //}
-
-        //for in-function entries {
-            if (root.previous.next == null) {
-                root.previous.next = new ForceStackEntry();
-                root.previous.next.previous = root.previous;
-            }
-            root.previous = root.previous.next;
-
-            root.previous.type  = type;
-            root.previous.field = field;
-            root.previous.file  = file;
-        //}
+        root.previous.type  = type;
+        root.previous.field = field;
+        root.previous.file  = file;
     }
 
 
@@ -60,7 +45,7 @@ class ForceStack
      */
     static public inline function exitFunction () : Void
     {
-        root.previous = root.previous.previous.previous;
+        root.previous = root.previous.previous;
     }
 
 

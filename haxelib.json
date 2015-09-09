@@ -1,0 +1,14 @@
+{
+    "name"         : "forcestack",
+    "url"          : "https://github.com/RealyUniqueName/ForceStack",
+    "license"      : "MIT",
+    "tags"         : ["callstack", "backtrace", "cross", "stack"],
+    "description"  : "ForceStack - unified crossplatform call stack information.",
+    "version"      : "0.1.0",
+    "releasenote"  : "Initial release. ",
+    "classPath"    : "src",
+    "contributors" : ["RealyUniqueName"],
+    "dependencies" : {
+        "exception"  : ""
+    }
+}
